@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Smart Room</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> current </h1>
+        <div class="card">
+            <p><strong>time:</strong> <span id="timestamp">--</span></p>
+            <p><strong>temp:</strong> <span id="temp">--</span> ℃</p>
+            <p><strong>humidity:</strong> <span id="hum">--</span> %</p>
+        </div>
+        <h2> recommendation </h2>
+        <div class="card">
+            <p><strong>temp:</strong> <span id="rec-temp">--</span> ℃</p>
+            <p><strong>humidity:</strong> <span id="rec-hum">--</span> %</p>
+        </div>
+	<div class="feedback">
+            <h3> feedback </h3>
+
+	    <p> temperature feedback</p>
+            <button onclick="sendFeedback(-1, 0)"> cold </button>
+            <button onclick="sendFeedback(0, 0)"> good </button> 
+            <button onclick="sendFeedback(1, 0)"> warm </button>
+
+	    <p> humidity feedback</p>
+            <button onclick="sendFeedback(0, -1)"> cold </button>
+            <button onclick="sendFeedback(0, 0)"> good </button>
+            <button onclick="sendFeedback(0, 1)"> warm </button>
+        </div>
+        <div id = "popup" class="popup hidden">
+            <p>Feedback submitted!</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
+
